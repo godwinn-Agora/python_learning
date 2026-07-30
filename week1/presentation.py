@@ -1,0 +1,10 @@
+prénom = input("Quel est ton prénom ? ")
+age = int(input("Quel est ton âge ? "))
+pays = input("Dans quel pays vis-tu ? ")
+objectif_professionnel = input("Quel est ton objectif professionnel ? ")
+
+print("Bonjour, je m'appelle", prénom)
+print("J'ai", age, "ans")
+print("Je vis en", pays)
+print("Mon objectif professionnel est :", objectif_professionnel)
+print("Merci de m'avoir écouté !")
