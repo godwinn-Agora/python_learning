@@ -1,10 +1,21 @@
-prénom = input("Quel est ton prénom ? ")
-age = int(input("Quel est ton âge ? "))
-pays = input("Dans quel pays vis-tu ? ")
-objectif_professionnel = input("Quel est ton objectif professionnel ? ")
 
-print("Bonjour, je m'appelle", prénom)
-print("J'ai", age, "ans")
-print("Je vis en", pays)
-print("Mon objectif professionnel est :", objectif_professionnel)
-print("Merci de m'avoir écouté !")
+
+while True:
+    menu = ["Dire Bonjour", "Afficher mon nom", "Afficher mon âge", "Quitter"]
+    for index, option in enumerate(menu):
+        print(f"{index + 1}. {option}")
+
+    choice = int(input("Choisis une option : "))
+    if choice == 1:
+        print("Bonjour !")
+    elif choice == 2:
+        nom = input("Quel est ton nom ? ")
+        print(f"Ton nom est : {nom}")
+    elif choice == 3:
+        age = input("Quel est ton âge ? ")
+        print(f"Ton âge est : {age} ans")
+    elif choice == 4:
+        print("Au revoir !")
+        break
+    else:
+        print("Option invalide. Veuillez choisir une option valide.")
