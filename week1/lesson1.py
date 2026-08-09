@@ -41,7 +41,24 @@ print("Soustraction :", d)
 print("Multiplication :", e)
 print("Division :", f)
 
+"""Exercice 3
+
+Crée un programme qui calcule l'âge d'une personne dans 5 ans."""
+
 prenom = input("Quel est ton prénom ? ")
 age = int(input("Quel est ton âge ? "))
 
 print(f"Bonjour {prenom}, dans 5 ans tu auras {age + 5} ans.")
+
+"""Exercice 4 — Réflexion
+
+Essaie de répondre sans chercher :
+
+Quelle est la différence entre une variable et une valeur ?
+
+Pourquoi "17" et 17 ne représentent-ils pas exactement la même chose ?"""
+
+"""Le premier 17 est une valeur de type chaîne de caractères (string), tandis que le second 17 est une valeur de type entier (integer). 
+Une variable est un nom qui fait référence à une valeur stockée en mémoire, tandis qu'une valeur est la donnée elle-même."""
+
+
