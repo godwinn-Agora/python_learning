@@ -1,34 +1,59 @@
-print("BIENVENUE DANS LE GESTIONNAIRE DE TÂCHES !")
+print("WELCOME TO THE TASK MANAGER !")
 
 tasks = []
 
 while True:
     print("\nMenu :")
-    print("1. Ajouter une tâche")
-    print("2. Supprimer une tâche")
-    print("3. Afficher les tâches")
-    print("4. Quitter")
+    print("1. Add a task")
+    print("2. Delete a task")
+    print("3. Display tasks")
+    print("4. Features")
+    print("5. Quit")
+    choice = input("Choose an option (1-4) : ")
 
-    choix = input("Choisissez une option (1-4) : ")
-
-    if choix == '1':
-        tache = input("Entrez la tâche à ajouter : ")
-        tasks.append(tache)
-        print(f"Tâche '{tache}' ajoutée.")
-    elif choix == '2':
-        tache = input("Entrez la tâche à supprimer : ")
-        if tache in tasks:
-            tasks.remove(tache)
-            print(f"Tâche '{tache}' supprimée.")
-        else:
-            print(f"Tâche '{tache}' non trouvée.")
-    elif choix == '3':
-        print("Liste des tâches :")
+    if choice == '1':
+        task = {"name": input("Enter the task name : "), "completed": False}
+        name = task["name"]
+        tasks.append(task)
+        print(f"Task '{name}' added.")
+    elif choice == '2':
+        name = input("Enter the task to delete : ")
         for task in tasks:
-            print(f"- {task}")
-    elif choix == '4':
-        print("Au revoir !")
+            if task["name"] == name:
+                tasks.remove(task)
+                print(f"Task '{name}' deleted.")
+                break
+        else:
+            print(f"Task '{name}' not found.")
+    elif choice == '3':
+        print("List of tasks :")
+        for index, task in enumerate(tasks, start=1):
+            print(f"{index}. {task}")
+    elif choice == '4':
+        name = input("which task's features do you want to see ?")
+        for task in tasks:
+            if task["name"] == name:
+                print(task)
+                choice = input("Which features do you want to change ?")
+                if choice.lower() == "name":
+                    task["name"] = input("Write the new name of your task:")
+                    print(task)
+                elif choice.lower() == "completion":
+                    completion = input("Do you have completed the task ?")
+                    for task in tasks:
+                        if completion.lower() == "yes":    
+                            task["completed"] = True
+                        elif completion.lower() == "no":
+                            task["completed"] = False
+                        else:
+                            print("Answer by yes or no !")
+                    break
+                break
+        else:
+            print(f"Task '{name}' not found.")         
+    elif choice == '5':
+        print("Goodbye !")
         break
     else:
-        print("Option invalide, veuillez réessayer.")
+        print("Invalid option, please try again.")
 
