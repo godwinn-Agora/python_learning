@@ -13,7 +13,7 @@ dico["city"] = "Suzhou"
 print(dico)
 
 for item in dico.items():
-    print(item)"""
+    print(item)
 
 student1 = { "name": "Alice",
             "Age": 18, 
@@ -35,4 +35,18 @@ student3 = { "name": "Charlie",
 
 students = [student1, student2, student3]
 for student in students:
-    print(student)
+    print(student)"""
+
+tasks = []
+
+task = {"name": "Tâche 1", "completed": False}
+
+name = input("Entrez le nom de la tâche : ")
+task = {"name": name, "completed": False}
+tasks.append(task)
+completed = input("La tâche est-elle terminée ? (oui/non) : ")
+if completed.lower() == "oui":
+    task["completed"] = True
+else:
+    task["completed"] = False
+tasks.append(task)
